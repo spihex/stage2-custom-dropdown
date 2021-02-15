@@ -18,6 +18,8 @@ class Dropdown {
         this.dropdownInputField.addEventListener('blur', this.onBlur.bind(this));
         this.dropdownInputField.addEventListener('focus', this.onFocus.bind(this));
 
+
+
         this.init(this.dataSource);
 
     }
@@ -37,14 +39,17 @@ class Dropdown {
 
             })
 
-        window.addEventListener('resize', function() {
-            this.dropdownInputField.blur();
-        });
 
-        window.addEventListener('scroll', function() {
-            this.dropdownInputField.blur();
-        });
+        window.addEventListener('resize', this.onResize.bind(this));
+        window.addEventListener('scroll', this.onScroll.bind(this));
+    }
 
+    onScroll() {
+        this.dropdownInputField.blur();
+    }
+
+    onResize() {
+        this.dropdownInputField.blur();
     }
 
     onFocus() {
