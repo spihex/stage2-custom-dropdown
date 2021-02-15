@@ -10,7 +10,7 @@ body {
     position: relative;
     width: 50%;
     min-width: 360px;
-    min-height: 220px;
+    min-height: 50px;
 }
 
 .dropdown__input {
@@ -50,6 +50,7 @@ body {
     padding: 0;
     overflow: hidden;
     max-height: 0;
+    z-index: 100;
 }
 
 .dropdown__list.open {
